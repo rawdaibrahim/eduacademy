@@ -5,10 +5,11 @@
 }
 :root{
   
-  --nav: #FCFCFC ;
-  --back:#FCFCFC;
+  --nav: #f4f4f4 ;
+  --back:#f4f4f4;
   --font:#01247a;
   --height:100vh;
+  --border: #a9b2b7;
 }
 body{
   flex-direction: column;
@@ -32,6 +33,7 @@ body{
   justify-content:flex-end;
   z-index: 5;
   font-family: "Source Sans Pro Topnav", sans-serif;
+  margin-bottom: 20px;
 }
 
 .nav .Link,
@@ -96,6 +98,10 @@ a.active .Link::after{
   transform: scaleX(1);
   background-color:#033ccd;
   height: 4px;
+}
+
+.profile{
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 
@@ -200,7 +206,7 @@ h6, h5{
   margin-right: 10px;
 }
 
-.card{
+.card, .points{
   height:50vh;
   width:25%;
   background-color: #fefefe;
@@ -355,4 +361,216 @@ h6, h5{
   width:40%;
   border: 1px solid #bcc6cd;
 }
+.role{
+  padding:0 20px;
+}
+.role label{
+  margin: 0 40px 0 3px;
+  color:#000000;
+}
+
+.user-container{
+ margin: 150px 50px 50px 50px;
+ border-radius: 10px;
+ display: flex;
+ height:50vh;
+ width:90%;
+ align-items: center;
+ justify-content: center;
+ padding:20px;
+ border: 1px solid #a9b2b7;  
+}
+
+.user-container .user{
+  margin:20px 30px;
+  width:50%;
+  
+}
+.user div{
+  font-size: 20px;
+}
+.user-container h1, .user-container h4, .user-container h3{
+  padding-bottom: 10px;
+  color:#011751;
+}
+.continue{
+  background: #e9b6c7;
+  padding: 13px 20px;
+  border-radius: 20px;
+  outline: none;
+  border:none;
+  font-size: 15px;
+  font-weight: 600;
+  margin:20px 0px;
+  
+
+}
+.points{
+  text-align: center;
+  position: relative;
+  height: 80%;
+  width:20%;
+  background: linear-gradient(to right, #e9b6c7, #b2afeb);
+  border-radius: 30px;
+  padding:40px;
+
+}
+.points div{
+  color:#000000;
+  font-weight: 600;
+}
+
+.points:hover{
+  box-shadow: 7px 10px 37px 10px rgba(0,0,0,0.86);
+  height:81%;
+  width:21%;
+  padding:0 10px;
+}
+.courses{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.course{
+  width:90%;
+  background-color: #fcfcfc;
+  position:relative;
+  padding:20px;
+  margin: 20px;
+  grid-template-columns: 70% auto;
+  display: grid;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.course-info{
+  margin: 70px;
+  font-size: large;
+  color:#0c0762;
+}
+.course-info *{
+  margin-bottom: 10px;
+}
+
+.course-thumbnail{
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.course-thumbnail img{
+  height:190px;
+  width:100%;
+
+}
+
+.course-thumbnail button{
+  height:50px;
+  width:60%;
+  outline: none;
+  border: none;
+  background-color: #180fc7;
+  border-radius: 6px;
+  color:#f4f4f4;
+  font-size: 15px;
+  margin:10px;
+  cursor: pointer;
+}
+
+.course-thumbnail button:hover{
+  background-color: #0f097c;
+}
+
+.lectures{
+  margin:100px 50px 0;
+  color:#060330;
+}
+
+.lecture{
+  background-color: #fcfcfc;
+  padding:20px 40px;
+  border: 1px solid var(--border);
+  margin:10px 30px;
+  border-radius: 5px;
+  font-family: PolySans ,'Open Sans' ,sans-serif;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.lecture h2{
+  margin-bottom: 10px;
+  color:#100a89;
+  font-weight: 500;
+  
+}
+
+.lecture button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  background-color:#150dab;
+  outline:none;
+  border:none;
+  width:80px;
+  height: 40px;
+  margin: 20px 10px 0;
+  border-radius: 3px;
+  font-size:30px;
+  padding-left: 10px;
+}
+.lecture button:hover{
+  background-color: #0e085f;
+}
+
+.lecture-content{
+  margin:20px;
+}
+.wrapper{
+  width:80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:20px;
+}
+
+.wrapper textarea{
+  width: 80%;
+  height:30px;
+  resize:none;
+  outline: none;
+  padding:15px;
+  border-radius: 5px;
+  font-size: 16px;
+  overflow-y: hidden;
+}
+
+.wrapper button{
+  height:40px;
+  margin-left: 20px;
+  background-color: #150dab;
+  color: #f4f4f4;
+  width: 15%;
+  border-radius: 5px;
+  outline:none;
+  border:none;
+  font-size: 18px;
+  cursor: pointer;
+  
+}
+
+.wrapper button:hover{
+  background-color: #0a0651;
+}
+
+
+
+
+
+
+
+
+
+
 

@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import facebook from '../Assets/facebook.png'
 import google from '../Assets/google.png'
-import Cookies from 'universal-cookie';
-import axios from 'axios';
 
-
-const cookies = new Cookies();
 
 const initialState = {
-    fullName: '',
+    fName: '',
+    lName: '',
     username: '',
     password: '',
     confirmPassword: '',
     phoneNumber: '',
     avatarURL: '',
 }
+
+
 
 const Auth = () => {
     const [form, setForm] = useState(initialState);
@@ -26,26 +25,6 @@ const Auth = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        const { username, password, phoneNumber, avatarURL } = form;
-
-        const URL = 'https://localhost:3000/auth';
-
-        const { data: { token, userId, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
-            username, password, fullName: form.fullName, phoneNumber, avatarURL,
-        });
-
-        cookies.set('token', token);
-        cookies.set('username', username);
-        cookies.set('fullName', fullName);
-        cookies.set('userId', userId);
-
-        if(isSignup) {
-            cookies.set('phoneNumber', phoneNumber);
-            cookies.set('avatarURL', avatarURL);
-            cookies.set('hashedPassword', hashedPassword);
-        }
-
         window.location.reload();
     }
 
@@ -146,6 +125,16 @@ const Auth = () => {
                                     onChange={handleChange}
                                     required
                                 />
+                            </div>
+                            )}
+                            {isSignup && (
+                            <div className="role">
+                                <input type="radio" id='student' value="Student" name="role"/>
+                                <label for="student" >Student</label>
+                                <input type="radio" id='teacher' value="Teacher" name="role" />
+                                <label for="teacher" >Teacher</label>
+                                <input type="radio" id='assistant' value="assistant" name="role" />
+                                <label for="assistant" >Assistant</label>
                             </div>
                             )}
                         <div className="submit">
